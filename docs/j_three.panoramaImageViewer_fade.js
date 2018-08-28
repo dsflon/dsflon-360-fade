@@ -1,6 +1,3 @@
-// import './three.min';
-// import './OrbitControls';
-
 function jThreePanoramaImageViewer(imageElm,imageSrc) {
 
     this.imageUA = navigator.userAgent;
@@ -157,7 +154,7 @@ jThreePanoramaImageViewer.prototype.initObject = function() {
             transparent: true
         });
         this.screen[i] = new THREE.Mesh( geometry, material[i] );
-        // this.screen[i].rotation.set(0,-Math.PI/2,0);
+        this.screen[i].rotation.set(0,-Math.PI/2,0);
         this.scene.add( this.screen[i] );
     }
 
