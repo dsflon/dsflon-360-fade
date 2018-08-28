@@ -1,0 +1,55 @@
+@charset "UTF-8";
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video { margin: 0; padding: 0; border: 0; font: inherit; font-size: 100%; vertical-align: baseline; }
+
+html { line-height: 1; }
+
+ol, ul { list-style: none; }
+
+table { border-collapse: collapse; border-spacing: 0; }
+
+caption, th, td { text-align: left; font-weight: normal; vertical-align: middle; }
+
+q, blockquote { quotes: none; }
+q:before, q:after, blockquote:before, blockquote:after { content: ""; content: none; }
+
+a img { border: none; }
+
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary { display: block; }
+
+html { overflow: auto; }
+
+body { overflow: hidden; min-width: 100%; font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", sans-serif; color: #333333; font-size: 13px; font-size: 0.8125rem; line-height: 180%; }
+
+.tb { display: none; }
+
+.sp { display: none; }
+
+.pc { display: inline-block; }
+
+* { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; -webkit-text-size-adjust: 100%; }
+
+a { cursor: pointer; color: #f74902; text-decoration: none; -webkit-tap-highlight-color: transparent; }
+a:hover { text-decoration: underline; }
+
+canvas { display: block; }
+
+img { max-width: 100%; height: auto; vertical-align: middle; }
+
+section:after { content: "."; display: block; height: 0; clear: both; visibility: hidden; }
+section.section { margin-top: 40px; }
+
+sup { vertical-align: super; line-height: 1; }
+
+sub { vertical-align: sub; line-height: 1; }
+
+.inner { display: block; width: 1024px; margin: 0 auto; }
+.inner:after { content: ""; display: block; clear: both; height: 0; visibility: hidden; overflow: hidden; font-size: 0.1em; line-height: 0; }
+
+.clearfix:after { content: ""; display: block; clear: both; height: 0; visibility: hidden; overflow: hidden; font-size: 0.1em; line-height: 0; }
+
+.clearfix { min-height: 1px; }
+
+* html .clearfix { height: 1px; /*\*/ /*/
+height: auto;
+overflow: hidden;
+/**/ }

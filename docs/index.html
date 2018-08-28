@@ -1,0 +1,69 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>j_three.panoramaImageViewer_fade.js | Library</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<link href="./common/css/common.css" rel="stylesheet">
+	<link href="./common/css/threedemo.css" rel="stylesheet">
+</head>
+<body>
+
+<div id="area"></div>
+<div id="loading">Loading ...</div>
+
+<script src="./common/libs/three.min.js"></script>
+<script src="./common/libs/OrbitControls.js"></script>
+<script src="./j_three.panoramaImageViewer_fade.js"></script>
+
+<script>
+
+var UA = navigator.userAgent;
+
+var imageSrc = [
+	'./common/images/img01.jpg',
+	'./common/images/img02.jpg',
+	'./common/images/img03.jpg'
+];
+
+window.addEventListener("load", function(){
+	ImageInit();
+	Init();
+});
+
+function ImageInit() {
+
+    area = document.getElementById("area");
+    mainImg = new jThreePanoramaImageViewer(area, imageSrc);
+	mainImg.enableZoom = true;
+	mainImg.minDistance = 5;
+	// mainImg.maxDistance = 10;
+	mainImg.autoRotate = true;
+	mainImg.autoRotateSpeed = 0.2;
+	mainImg.speed = 10;
+
+	// if(/(iPhone|iPod|iPad|Android)/.test(UA)) mainImg.deviceOrientationControls = true;
+
+}
+
+function Init(){
+
+	loading = document.getElementById("loading");
+	mainImg.loadEnd = loadEnd;
+
+}
+
+function loadEnd() {
+
+	loading.className = "loadEnd";
+	mainImg.play();
+
+}
+
+
+</script>
+
+</body>
+</html>

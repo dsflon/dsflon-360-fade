@@ -1,0 +1,72 @@
+
+body {
+    margin: 0px;
+    overflow: hidden;
+    background: #000;
+}
+#loading {
+    position: fixed;
+    left: 50%; top: 35%;
+    transform: translate(-50%,50%);
+    -webkit-transform: translate(-50%,50%);
+    -ms-transform: translate(-50%,50%);
+    color: #FFF;
+    animation: ani_loadingText 1s ease 0s infinite normal;
+    -webkit-animation: ani_loadingText 1s ease 0s infinite normal;
+}
+#loading.loadEnd { display: none; }
+@keyframes ani_loadingText { 0% { opacity: 1; } 100% { opacity: 0.2; } }
+@-webkit-keyframes ani_loadingText { 0% { opacity: 1; } 100% { opacity: 0.2; } }
+
+#play,#volume,#stop,#fileWrap,#reload {
+    position: fixed;
+    left: 50%; bottom: 50%;
+    transform: translate(-50%,50%);
+    -webkit-transform: translate(-50%,50%);
+    -ms-transform: translate(-50%,50%);
+
+    width: 60px; height: 60px;
+    background: #FFF;
+    color: #1253A4;
+    line-height: 60px;
+    font-size: 22px;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 100%;
+    transition: all 0.2s ease 0s;
+    -webkit-transition: all 0.2s ease 0s;
+}
+#play { left: 35%; }
+#fileWrap {
+    left: 65%;
+    background: url(../images/upload.svg) no-repeat center #FFF;
+    background-size: 30px auto;
+    border: none;
+}
+
+#reload {
+    left: auto;
+    transform: translate(50%,50%);
+    -webkit-transform: translate(50%,50%);
+    -ms-transform: translate(50%,50%);
+    background: url(../images/reload.svg) no-repeat center #FFF;
+    background-size: 30px auto;
+}
+#reload.disabled { opacity: 0; pointer-events: none; }
+#reload.play { right: 50px; bottom: 50px; }
+
+#fileWrap.disabled { opacity: 0.5; pointer-events: none; }
+#fileWrap.play { opacity: 0; pointer-events: none; }
+#file { display: none; }
+
+#play.disabled { opacity: 0.5; pointer-events: none; }
+#play.play { left: 50px; bottom: 50px; }
+
+#stop.disabled { opacity: 0; pointer-events: none; }
+#stop.play { left: 120px; bottom: 50px; }
+#stop.stop { opacity: 0.2; }
+
+#volume.disabled { opacity: 0; pointer-events: none; }
+#volume.play { left: 190px; bottom: 50px; }
+#volume.mute { opacity: 0.2; }

@@ -1,0 +1,201 @@
+@charset "UTF-8";
+
+body {
+    min-width: 100%;
+}
+
+canvas {
+    display: block;
+}
+
+footer {
+    text-align: center;
+    font-size: 10px;
+    color: #333;
+    position: fixed;
+    bottom: 0; left: 0;
+    width: 100%;
+}
+#loading {
+    position: fixed;
+    bottom: 50%; left: 50%;
+    transform: translate(-50%,50%);
+    -webkit-transform: translate(-50%,50%);
+    color: #999;
+    font-size: 20px;
+    transition: all 0.4s ease 0s;
+    -webkit-transition: all 0.4s ease 0s;
+    opacity: 0;
+}
+#loading.active {
+    opacity: 1;
+}
+
+.btnText {
+    line-height: 120%;
+    display: block;
+    position: absolute;
+    bottom: 50%; left: 50%;
+    width: 120px;
+    margin: 0 0 -93px -60px;
+    text-align: center;
+    font-size: 12px;
+    color: #999;
+    line-height: 135%;
+}
+
+/* ======================================================
+#playBtn
+====================================================== */
+#playBtn {
+    position: fixed;
+    bottom: 50%; left: 50%;
+    width: 120px; height: 120px;
+    transform: translate(-235%,50%);
+    -webkit-transform: translate(-235%,50%);
+    border: 3px solid #999;
+    border-radius: 100%;
+    background: none;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent !important; outline: none;
+    transition: all 0.4s ease 0s;
+    -webkit-transition: all 0.4s ease 0s;
+    background: url(../images/icons/sound.svg) no-repeat center;
+    background-size: 60px auto;
+}
+#playBtn:hover { opacity: 0.6; }
+#playBtn.hide {
+    opacity: 0;
+    pointer-events: none;
+}
+
+
+/* ======================================================
+#fileWrap
+====================================================== */
+#fileWrap {
+    position: fixed;
+    bottom: 50%; left: 50%;
+    width: 120px; height: 120px;
+    transform: translate(-50%,50%);
+    -webkit-transform: translate(-50%,50%);
+    border: 3px solid #999;
+    border-radius: 100%;
+    background: none;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent !important;
+    outline: none;
+    transition: all 0.4s ease 0s;
+    -webkit-transition: all 0.4s ease 0s;
+    background: url(../images/icons/upload.svg) no-repeat center;
+    background-size: 60px auto;
+    line-height: 120%;
+}
+#fileWrap:hover { opacity: 0.6; }
+#fileWrap input { display: none; }
+#fileWrap span { margin-bottom: -100px; }
+#fileWrap.hide {
+    opacity: 0;
+    pointer-events: none;
+}
+
+
+/* ======================================================
+#userMediaBtn
+====================================================== */
+#userMediaBtn {
+    position: fixed;
+    bottom: 50%; left: 50%;
+    width: 120px; height: 120px;
+    transform: translate(135%,50%);
+    -webkit-transform: translate(135%,50%);
+    border: 3px solid #999;
+    border-radius: 100%;
+    background: none;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent !important; outline: none;
+    transition: all 0.4s ease 0s;
+    -webkit-transition: all 0.4s ease 0s;
+    background: url(../images/icons/mic.svg) no-repeat center;
+    background-size: 60px auto;
+    line-height: 120%;
+}
+#userMediaBtn:hover { opacity: 0.6; }
+#userMediaBtn.hide {
+    opacity: 0;
+    pointer-events: none;
+}
+#userMediaBtn.disabled {
+    opacity: 0.4;
+    pointer-events: none;
+}
+
+/* ======================================================
+#volume
+====================================================== */
+#volumeBtn {
+    position: fixed;
+    bottom: 43px; left: 100px;
+    transition: all 0.4s ease 0s;
+    -webkit-transition: all 0.4s ease 0s;
+    opacity: 1;
+}
+#volumeBtn.hide {
+    bottom: -100px;
+    opacity: 0;
+}
+
+
+/* ======================================================
+#stop
+====================================================== */
+#stopBtn {
+    position: fixed;
+    display: block;
+    bottom: 20px; left: 20px;
+    transform: translate(0,0);
+    -webkit-transform: translate(0,0);
+    width: 60px; height: 60px;
+    border: 3px solid #999;
+    border-radius: 100%;
+    transition: all 0.4s ease 0s;
+    -webkit-transition: all 0.4s ease 0s;
+    opacity: 1;
+    cursor: pointer;
+}
+#stopBtn:hover { opacity: 0.6; }
+#stopBtn:before,#stopBtn:after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 50%; left: 50%;
+    -webkit-transform: rotate(0deg) translate(-50%, -50%);
+    transform: rotate(0deg) translate(-50%, -50%);
+    height: 30px; width: 6px;
+    background: #999;
+    border: none;
+    margin-top: 0;
+    transition: all 0.1s ease 0s;
+    -webkit-transition: all 0.1s ease 0s;
+}
+#stopBtn.hide {
+    opacity: 0;
+    bottom: -100px;
+}
+#stopBtn:before { margin-left: -7px; }
+#stopBtn:after { margin-left: 7px; }
+#stopBtn span { display: none; }
+
+#stopBtn.play:before { opacity: 0; }
+#stopBtn.play:after {
+    width: 0; height: 0;
+    position: absolute;
+    top: 50%; left: 50%;
+    background: none;
+    border-left: 16px solid transparent;
+    border-top: 25px solid #999;
+    border-right: 16px solid transparent;
+    -webkit-transform: rotate(-90deg) translate(-50%, -50%);
+    transform: rotate(-90deg) translate(-50%, -50%);
+    margin: -28px 0 0 1px;
+}
